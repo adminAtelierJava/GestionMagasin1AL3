@@ -1,10 +1,29 @@
+package Entite;
+
 import java.util.Date;
 public class Produit {
-    int identifiant;
-    String libelle,marque;
-    float prix;
+    private int identifiant;
+    private String libelle,marque;
+    private float prix;
 
-    Date dateexp;
+    private Date dateexp;
+
+
+    public void setIdentifiant(int id)
+    {
+        this.identifiant=id;
+
+    }
+    public int getIdentifiant()
+    {
+        return identifiant;
+    }
+    public void setPrix(float p)
+    {
+        if(p>0)
+            prix=p;
+        else System.out.println("le prix doit être positif");
+    }
     public Produit(int id,String libelle,String m)
     {
 
@@ -46,5 +65,46 @@ public class Produit {
         return "identifiant :"+identifiant+" marque :"
                 +marque+" libelle :"+libelle+" prix :"
                 +prix+"Date expiration :"+dateexp;
+    }
+
+    public String getLibelle() {
+        return libelle;
+    }
+
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
+    }
+
+    public String getMarque() {
+        return marque;
+    }
+
+    public void setMarque(String marque) {
+        this.marque = marque;
+    }
+
+    public float getPrix() {
+        return prix;
+    }
+
+    public Date getDateexp() {
+        return dateexp;
+    }
+
+    public void setDateexp(Date dateexp) {
+        this.dateexp = dateexp;
+    }
+    public boolean comparer(Produit p)
+    {
+        if(this.identifiant==p.identifiant
+                &&marque.equals(p.marque) &&this.libelle==p.libelle)
+            return true;
+            return false;
+    }
+
+    public static boolean comparer(Produit p1,Produit p2)
+    {
+        return p1.identifiant==p2.identifiant
+                &&p1.marque.equals(p2.marque) &&p1.libelle==p2.libelle;
     }
 }
