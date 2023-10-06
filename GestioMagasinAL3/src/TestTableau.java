@@ -1,3 +1,5 @@
+import Entite.Produit;
+
 public class TestTableau {
     public static void main(String[] args) {
         int []   tab=new int[3];
@@ -27,7 +29,7 @@ public class TestTableau {
 
        String [] tab3={"ffff","'gghh","glhhl"};
 
-       Produit [] tabpr=new Produit[2];
+       Produit[] tabpr=new Produit[2];
 
        Produit p1=new Produit();
        tabpr[0]=p1;
